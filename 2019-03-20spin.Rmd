@@ -88,7 +88,26 @@ typeof(dtObject)
 as.double(dtObject)
 
 Sys.timezone()
+
 ```
+
+```{r}
+twDateTime <- ymd_hms("2019-03-18 14:04:00", tz="Asia/Taipei")
+LisbonDateTime <- with_tz(twDateTime,tz="Europe/Lisbon")
+JapenDateTime <- with_tz(twDateTime,tz="Asia/Tokyo")
+
+typeof(JapenDateTime)
+
+as.double(twDateTime)
+as.double(JapenDateTime)
+ymd_hms(JapenDateTime)
+
+ydm("2019-18-03") 
+
+dym("03-2019-03") 
+
+```
+
 
 
 

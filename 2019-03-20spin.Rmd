@@ -109,6 +109,64 @@ dym("03-2019-03")
 ```
 
 
+```{r}
+a <- c(1, 5, -3)
+b <- c(0.5, 12, 2)
+aL <- c(1L, 5L, -3L)
+bL <- c(-2L, -4L, 8L)
+typeof(a)
+
+a+b
+a*bL
+class(a+bL)
+class(a*bL)
+
+```
+```{r}
+ymd("1965-06-04") -> startingDate
+ymd("2020-03-07") -> endingDate
+endingDate - startingDate
+class(endingDate - startingDate)
+typeof(endingDate - startingDate)
+
+```
+
+```{r}
+x <- 5
+y <- 7
+
+x2 <- c(1,5,10)
+y2 <- c(-1,5,20)
+
+x3 <- c("小明","小花")
+y3 <- c("小明","小華")
+
+x>=y
+2*x>=y
+x==2
+x!=2
+x
+x2
+x==x2
+x!=x2
+y3
+"小明"==y3
+```
+```{r}
+x2 <- c(1,NA,10)
+y2 <- c(-1,NA,20)
+x3 <- c(NA,"小花")
+y3 <- c(NA,"小華")
+is.na(x2)
+x2+6
+0/0
+```
+
+
+
+
+
+
 
 
 

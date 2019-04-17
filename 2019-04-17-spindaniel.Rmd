@@ -15,3 +15,82 @@ library(stringr)
 library(lubridate)
 ```
 
+```{r}
+plasticContainer <- list(
+  greenBox=c("paper","scissor"),     # location 1
+  redBox=c(1,3,2.5),               # location 2
+  blueBox=c(TRUE,FALSE,TRUE,TRUE)    # location 3
+)
+```
+
+#[[.]]可用元素名稱或位置
+```{r}
+plasticContainer[["greenBox"]] 
+plasticContainer[[1]]
+```
+
+
+```{r}
+plasticContainer[[1]][[1]]
+```
+#ex1
+```{r}
+成績單 <- c(
+  個經=90,
+  總經=77,
+  統計=88
+)
+```
+```{r}
+成績單[["個經"]]
+成績單[[1]]
+```
+#ex2
+```{r}
+studentRecord <-
+  list(
+    學號="410073058",
+    姓名="王小明",
+    性別="男",
+    學年平均成績=list(
+      一年級=88,
+      二年級=90.3,
+      三年級=92,
+      四年級=95
+    )
+  )
+
+studentRecord
+```
+
+```{r}
+studentRecord[[2]]
+studentRecord[[4]][[3]]
+```
+
+#中括號的特色在於可保有母層次的結構(list) 
+#一個中括號只能用在取一群物件!!
+```{r}
+plasticContainer[c("greenBox","redBox")] 
+plasticContainer[c(1,2)]
+```
+
+#兩個中括號綠色丟掉了
+```{r}
+extract1 <- plasticContainer[c("greenBox")]
+extract1
+extract2 <- plasticContainer[[c("greenBox")]]
+extract2
+```
+#想從box取出paper 
+```{r}
+extract1[[1]][[1]]
+extract2[[1]]
+```
+
+
+
+
+
+
+

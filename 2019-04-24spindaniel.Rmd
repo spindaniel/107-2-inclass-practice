@@ -35,6 +35,34 @@ StuDF
 ```
 
 
+```{r}
+class(StuDF$姓名)
+```
+
+```{r}
+chosenLETTERS <- LETTERS[1:15]
+matObj1 <- matrix(chosenLETTERS,5,3)
+matObj1
+
+LETTERS
+chosenLETTERS <- LETTERS[1:8]
+m <- matrix(chosenLETTERS,2,4)
+m
+tolower(m)
+```
+
+取出性別 學分數
+```{r}
+library(readr)
+classSurvey <- read_csv("https://raw.githubusercontent.com/tpemartin/github-data/master/classSurvey.csv")
+
+classSurvey[,c(4,5)]
+
+classSurvey[c("性別","本學期學分數")]
+classSurvey[c(1:60),c(4,5)]
+```
+
+
 
 
 

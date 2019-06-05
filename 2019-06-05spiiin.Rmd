@@ -1,0 +1,107 @@
+---
+title: '2019-06-05'
+author: "spin"
+date: "2019年6月5日"
+output: html_document
+---
+
+
+
+```{r}
+utility_cobb_douglass <- function(x,y,.alpha,.beta){
+  utilValue <- x^.alpha*y^.beta # 程序產生output值
+  return(utilValue) # 傳回output值
+}
+```
+
+```{r}
+
+utility_cobb_douglass(1,2,0.5,0.8)
+utility_cobb_douglass(1,2,.beta=0.8,.alpha=0.5)
+```
+
+#####ch9
+```{r}
+load(url("https://github.com/tpemartin/github-data/blob/master/loopTranscriptData.Rda?raw=true"))
+gpa_fun <- function(studentID){
+  transcriptDataFinal$學號==studentID -> logiChosenStudent
+  
+  subSample <- transcriptDataFinal[logiChosenStudent,]
+  
+  sum(subSample$學期成績*subSample$學分數)/
+    sum(subSample$學分數) -> GPA
+  return(GPA)}
+```
+
+```{r}
+gpa_fun(transcriptDataFinal$學號)
+
+
+studentIds <- unique(transcriptDataFinal$學號) # 全部可能學號
+studentIds
+```
+
+sequence_source
+```{r}
+# 以前5筆學號為sequence_source
+studentIds5 <- studentIds[1:5]
+studentIds5
+```
+作法一
+```{r}
+gpa_fun(studentIds5[[1]])
+for(i in studentIds5){
+  print(i)
+  print(gpa_fun(i))
+}
+```
+作法二
+```{r}
+for(i in c(1:5)){
+  print(i) 
+  print(studentIds5[[i]])
+}
+```
+
+三.seq_along()
+```{r}
+for(i in seq_along(studentIds5)){
+  print(i)
+  print(studentIds5[[i]])
+}
+```
+練習##
+```{r}
+gmailAddress <- c(
+  "tim@gmail.com",
+  "anita",
+  "yellen@gmail.com",
+  "huang@gmail.com"
+)
+gpa_fun()
+```
+一.
+```{r}
+for(i in gmailAddress){
+  print(i)
+}
+```
+
+二.
+```{r}
+for(i in c(1:4)){
+  print(i)
+  print(gmailAddress[[i]])
+}
+```
+三
+```{r}
+for(i in seq_along(gmailAddress)){
+  print(i)
+  print(gmailAddress[[i]])
+}
+```
+
+
+
+
